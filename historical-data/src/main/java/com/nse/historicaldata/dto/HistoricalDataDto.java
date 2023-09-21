@@ -5,12 +5,12 @@ import com.nse.historicaldata.constants.NSEConstants;
 public class HistoricalDataDto {
 	private String DATE;
 	private String SERIES;
-	private float OPEN;
+	private double OPEN;
 	private String HIGH;
 	private String LOW;
 	private String PREV_CLOSE;
 	private String LTP;
-	private float CLOSE;
+	private double CLOSE;
 	private String VWAP;
 	private String FIFTYTWOWEEK_HIGH;
 	private String FIFTYTWOWEEK_LOW;
@@ -35,11 +35,11 @@ public class HistoricalDataDto {
 		SERIES = sERIES;
 	}
 
-	public float getOPEN() {
+	public double getOPEN() {
 		return OPEN;
 	}
 
-	public void setOPEN(float oPEN) {
+	public void setOPEN(double oPEN) {
 		OPEN = oPEN;
 	}
 
@@ -75,11 +75,11 @@ public class HistoricalDataDto {
 		LTP = lTP;
 	}
 
-	public float getCLOSE() {
+	public double getCLOSE() {
 		return CLOSE;
 	}
 
-	public void setCLOSE(float cLOSE) {
+	public void setCLOSE(double cLOSE) {
 		CLOSE = cLOSE;
 	}
 

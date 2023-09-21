@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+
 import com.nse.historicaldata.constants.ConsumerConstants;
 import com.nse.historicaldata.constants.NSEConstants;
 import com.nse.historicaldata.dto.QueryDateDto;
@@ -16,7 +18,10 @@ import com.nse.historicaldata.utils.NSEFileUtils;
 public class PopulateFilesWithNSEUrls {
 
 	public static void main(String[] args) throws IOException {
-
+		FileUtils.cleanDirectory(new File(
+				"C:\\Users\\gowtham\\Desktop\\competitive\\historical-data\\src\\main\\resources\\nseHistoryFile\\input"));
+		FileUtils.cleanDirectory(new File(
+				"C:\\Users\\gowtham\\Desktop\\competitive\\historical-data\\src\\main\\resources\\nseHistoryFile\\output"));
 		FileWriter fileWrite = null;
 		File outputFile = new File(
 				"C:\\Users\\gowtham\\Desktop\\competitive\\historical-data\\src\\main\\resources\\ipoNames\\openChrome.bat");

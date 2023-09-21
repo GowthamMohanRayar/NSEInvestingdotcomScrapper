@@ -11,7 +11,6 @@ import java.util.function.Consumer;
 import com.nse.historicaldata.constants.NSEConstants;
 import com.nse.historicaldata.constants.PredicateConstants;
 import com.nse.historicaldata.dto.QueryDateDto;
-import com.nse.historicaldata.dto.QueryDateDto.CalenderPeriod;
 import com.nse.historicaldata.service.OutputFileService;
 
 public class NSEFileUtils {
@@ -48,11 +47,9 @@ public class NSEFileUtils {
 	}
 
 	public static void readFromAndWriteToFile(String ipo, Consumer<String> fileRowOperation,
-			Consumer<Scanner> exitOperation, int period, CalenderPeriod calenderPeriod) {
+			Consumer<Scanner> exitOperation, List<QueryDateDto> queryDates) {
 		Scanner fileReader = null;
 		try {
-
-			List<QueryDateDto> queryDates = QueryDateDto.prepareQueryDates(period, CalenderPeriod.YEARS);
 			OutputFileService.outputFileInitialize(ipo, NSEConstants.CSV_HEADER, queryDates);
 			for (QueryDateDto queryDate : queryDates) {
 

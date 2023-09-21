@@ -1,5 +1,6 @@
 package com.nse.historicaldata.constants;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import com.nse.historicaldata.dto.QueryDateDto;
@@ -55,4 +56,7 @@ public class NSEConstants {
 				.replaceFirst(START_DATE, queryDate.get(queryDate.size() - 1).getStartDate())
 				.replaceFirst(END_DATE, queryDate.get(0).getEndDate());
 	}
+
+	public static SimpleDateFormat NSE_DATE_FORMATTER = new SimpleDateFormat("dd-MMM-yyyy");
+
 }
